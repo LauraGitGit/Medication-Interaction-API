@@ -26,7 +26,7 @@ Content-Type: application/json
 ### 
 POST http://localhost:3001/medication
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxYzcwZmM1N2YxOWE0ODcyNGZjYzUiLCJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzAxMTI3OTMsImV4cCI6MTc3MDExMzM5M30.PERDUIPLET-OejISUXInJaCxkn30NBd2xzK9h7xtpMw
+Authorization: Bearer YOUR_TOKEN_HERE
 
 {
   "name": "Alvedon",
@@ -54,30 +54,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxY
 ###
 POST http://localhost:3001/medications
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxYzcwZmM1N2YxOWE0ODcyNGZjYzUiLCJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzAxMTI3OTMsImV4cCI6MTc3MDExMzM5M30.PERDUIPLET-OejISUXInJaCxkn30NBd2xzK9h7xtpMw
-
-[
-    {
-  "name": "Naproxen",
-  "interactions": {
-    "food": {
-      "risk": "low",
-      "note": "Naproxen may interact with food, especially when taken with alc"
-    },
-    "alcohol": {
-      "risk": "caution",
-      "note": "It is recommended to avoid alcohol when taking Naproxen."
-    },
-    "pregnancy": {
-      "risk": "low",
-      "note": "Naproxen is generally safe when used as directed during pregnancy."
-    },
-    "breastfeeding": {
-      "risk": "low",
-      "note": "Naproxen is generally safe when used as directed during breastfeeding."
-    }
-  }
-},
+Authorization: Bearer YOUR_TOKEN_HERE
 
 {
     "name": "Ibuprofen",
@@ -100,7 +77,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxY
         }   
     }
 }
-]
+
 
 //check the total number of medications
 ###
@@ -112,5 +89,5 @@ GET http://localhost:3001/medication/search/Ibuprofen
 
 //delete a medication by id 
 ###
-DELETE http://localhost:3001/medication/6981c758c57f19a48724fcc8
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxYzcwZmM1N2YxOWE0ODcyNGZjYzUiLCJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzAxMTI3OTMsImV4cCI6MTc3MDExMzM5M30.PERDUIPLET-OejISUXInJaCxkn30NBd2xzK9h7xtpMw
+DELETE http://localhost:3001/medication/YOUR_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE

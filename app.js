@@ -82,7 +82,7 @@ app.post("/auth/login", async (req, res) => {
       },
       JWT_SECRET,
       {
-        expiresIn: "10m", //Token valid for 10 mins fow now for testing purpose.
+        expiresIn: "1m", //Token valid for 1 mins fow now for testing purpose.
       },
     );
 
