@@ -33,16 +33,10 @@ PS: This is a study based API that has a few manually added medication informati
    npm start
    ```
 
-   node app.js
-
-   ```
-
    The server runs on **port 3001**. You should see: `Server is running on port 3001`, `Connected to database`.
 
-   ```
-
 4. **Test the API**  
-   Use the `medication-api.http` file in this repo (e.g. in VS Code or cursor with the REST Client extension).
+   Use the `medication-api.http` file in this repo (e.g. in VS Code or Cursor with the REST Client extension).
 
 ---
 
