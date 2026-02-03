@@ -2,7 +2,7 @@
 
 A REST API for managing medications and their interaction information (e.g. with food, alcohol, pregnancy, breastfeeding). Uses JWT for authentication.
 
-PS: This is a study based API that has a few manually added medication information. The plan was to use FASS API as a data source but unfortunetelly its too expensive(15000 SEK/year) to use FASS. I am thinking of an alternative currently.
+PS: This is a study based API that has a few manually added medication information. The plan was to use FASS API as a data source but unfortunately its too expensive(15000 SEK/year) to use FASS. I am thinking of an alternative currently.
 
 ---
 
@@ -10,9 +10,6 @@ PS: This is a study based API that has a few manually added medication informati
 
 - **Node.js** (v18 or similar)
 - **MongoDB** running locally on `localhost:27017`
-- **Express** "^5.2.1"
-- **bcryptjs** "^3.0.3",
-- **jsonwebtoken** "^9.0.3"
 
 ---
 
@@ -36,7 +33,7 @@ PS: This is a study based API that has a few manually added medication informati
    The server runs on **port 3001**. You should see: `Server is running on port 3001`, `Connected to database`.
 
 4. **Test the API**  
-   Use the `medication-api.http` file in this repo (e.g. in VS Code or Cursor with the REST Client extension).
+   Use the `medication-api.http` file in this repo (e.g. in VS Code or cursor with the REST Client extension).
 
 ---
 
