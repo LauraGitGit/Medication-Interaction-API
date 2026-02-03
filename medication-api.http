@@ -1,0 +1,116 @@
+//register a new user
+###
+POST http://localhost:3001/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "MyStrongPassword"
+}
+
+// Login User
+###
+POST http://localhost:3001/auth/login
+Content-Type: application/json
+
+{
+   "email": "test@example.com",
+   "password": "MyStrongPassword"
+
+}
+
+
+
+
+//create one medication
+### 
+POST http://localhost:3001/medication
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxYzcwZmM1N2YxOWE0ODcyNGZjYzUiLCJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzAxMTI3OTMsImV4cCI6MTc3MDExMzM5M30.PERDUIPLET-OejISUXInJaCxkn30NBd2xzK9h7xtpMw
+
+{
+  "name": "Alvedon",
+  "interactions": {
+    "food": {
+      "risk": "low",
+      "note": "No known interaction with food."
+    },
+    "alcohol": {
+      "risk": "caution",
+      "note": "Alcohol may increase the risk of liver damage when taken in high doses."
+    },
+    "pregnancy": {
+      "risk": "low",
+      "note": "Generally considered safe when used as directed."
+    },
+    "breastfeeding": {
+      "risk": "low",
+      "note": "Compatible with breastfeeding in normal doses."
+    }
+  }
+}
+
+//create several medications at once
+###
+POST http://localhost:3001/medications
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxYzcwZmM1N2YxOWE0ODcyNGZjYzUiLCJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzAxMTI3OTMsImV4cCI6MTc3MDExMzM5M30.PERDUIPLET-OejISUXInJaCxkn30NBd2xzK9h7xtpMw
+
+[
+    {
+  "name": "Naproxen",
+  "interactions": {
+    "food": {
+      "risk": "low",
+      "note": "Naproxen may interact with food, especially when taken with alc"
+    },
+    "alcohol": {
+      "risk": "caution",
+      "note": "It is recommended to avoid alcohol when taking Naproxen."
+    },
+    "pregnancy": {
+      "risk": "low",
+      "note": "Naproxen is generally safe when used as directed during pregnancy."
+    },
+    "breastfeeding": {
+      "risk": "low",
+      "note": "Naproxen is generally safe when used as directed during breastfeeding."
+    }
+  }
+},
+
+{
+    "name": "Ibuprofen",
+    "interactions": {
+        "food": {
+            "risk": "low",
+            "note": "No known interaction with food."
+        },
+        "alcohol": {
+            "risk": "low",
+            "note": "No known interaction with alcohol."
+        },
+        "pregnancy": {
+            "risk": "low",
+            "note": "No known interaction with pregnancy."
+        },
+        "breastfeeding": {
+            "risk": "low",
+            "note": "No known interaction with breastfeeding."
+        }   
+    }
+}
+]
+
+//check the total number of medications
+###
+GET http://localhost:3001/medication/count
+
+//search for a medication by name
+###
+GET http://localhost:3001/medication/search/Ibuprofen
+
+//delete a medication by id 
+###
+DELETE http://localhost:3001/medication/6981c758c57f19a48724fcc8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTgxYzcwZmM1N2YxOWE0ODcyNGZjYzUiLCJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NzAxMTI3OTMsImV4cCI6MTc3MDExMzM5M30.PERDUIPLET-OejISUXInJaCxkn30NBd2xzK9h7xtpMw
