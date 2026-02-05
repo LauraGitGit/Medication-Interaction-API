@@ -67,20 +67,19 @@ Most medication endpoints require a **JWT token**. Flow:
 
 ## Endpoints
 
-| Method | Path             | Auth? | Description                           |
-| ------ | ---------------- | ----- | ------------------------------------- |
-| POST   | `/auth/register` | No    | Register a new user (email, password) |
-| POST   | `/auth/login`    | No    | Log in and get a JWT token            |
-| POST   | `/medication`    | Yes   | Create one medication                 |
-
-> **PS: Why a limit?** To prevent abuse: allowing a very large list in one request could slow down or crash the API, so bulk create is capped at 10 medications per request.
-
-| POST | `/medications` | Yes | Create up to 10 medications at once |
-| GET | `/medication/count` | No | Get total number of medications |
-| GET | `/medication/search/:name` | No | Get one medication by name |
-| DELETE | `/medication/:id` | Yes | Delete a medication by MongoDB `_id` |
+| Method | Path                       | Auth? | Description                           |
+| ------ | -------------------------- | ----- | ------------------------------------- |
+| POST   | `/auth/register`           | No    | Register a new user (email, password) |
+| POST   | `/auth/login`              | No    | Log in and get a JWT token            |
+| POST   | `/medication`              | Yes   | Create one medication                 |
+| POST   | `/medications`             | Yes   | Create up to 10 medications at once   |
+| GET    | `/medication/count`        | No    | Get total number of medications       |
+| GET    | `/medication/search/:name` | No    | Get one medication by name            |
+| DELETE | `/medication/:id`          | Yes   | Delete a medication by MongoDB `_id`  |
 
 ---
+
+> **PS: Why a limit?** To prevent abuse: allowing a very large list in one request could slow down or crash the API, so bulk create is capped at 10 medications per request.
 
 ## Status codes
 
