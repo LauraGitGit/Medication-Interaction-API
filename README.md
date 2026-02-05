@@ -45,6 +45,10 @@ http://localhost:3001
 
 ---
 
+> **Why auth?** This is one of the security threats I talked about in my video. Because my API
+> gives safety information, it’s important that the interaction rules cannot be changed by
+> unauthorized users. If someone changed them, the API could give unsafe advice
+
 ## Authentication
 
 Most medication endpoints require a **JWT token**. Flow:
@@ -57,21 +61,24 @@ Most medication endpoints require a **JWT token**. Flow:
    Authorization: Bearer YOUR_TOKEN_HERE
    ```
 
-Tokens expire after **10 minutes**. After that, use "Token expired, please log in again" as a signal to call login again and get a new token.
+Tokens expire after **1 minutes** (This is just for testing purpose for now). After that, use "Token expired, please log in again" as a signal to call login again and get a new token.
 
 ---
 
 ## Endpoints
 
-| Method | Path                       | Auth? | Description                           |
-| ------ | -------------------------- | ----- | ------------------------------------- |
-| POST   | `/auth/register`           | No    | Register a new user (email, password) |
-| POST   | `/auth/login`              | No    | Log in and get a JWT token            |
-| POST   | `/medication`              | Yes   | Create one medication                 |
-| POST   | `/medications`             | Yes   | Create up to 10 medications at once   |
-| GET    | `/medication/count`        | No    | Get total number of medications       |
-| GET    | `/medication/search/:name` | No    | Get one medication by name            |
-| DELETE | `/medication/:id`          | Yes   | Delete a medication by MongoDB `_id`  |
+| Method | Path             | Auth? | Description                           |
+| ------ | ---------------- | ----- | ------------------------------------- |
+| POST   | `/auth/register` | No    | Register a new user (email, password) |
+| POST   | `/auth/login`    | No    | Log in and get a JWT token            |
+| POST   | `/medication`    | Yes   | Create one medication                 |
+
+> **Why a limit?** To prevent abuse: allowing a very large list in one request could slow down or crash the API, so bulk create is capped at 10 medications per request.
+
+| POST | `/medications` | Yes | Create up to 10 medications at once |
+| GET | `/medication/count` | No | Get total number of medications |
+| GET | `/medication/search/:name` | No | Get one medication by name |
+| DELETE | `/medication/:id` | Yes | Delete a medication by MongoDB `_id` |
 
 ---
 
