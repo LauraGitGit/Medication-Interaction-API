@@ -2,7 +2,7 @@
 
 A REST API for managing medications and their interaction information (e.g. with food, alcohol, pregnancy, breastfeeding). Uses JWT for authentication.
 
-PS: This is a study based API that has a few manually added medication information. The plan was to use FASS API as a data source but unfortunately its too expensive(15000 SEK/year) to use FASS. I am thinking of an alternative currently.
+> **PS:** This is a study based API that has a few manually added medication information. The plan was to use FASS API as a data source but unfortunately its too expensive(15000 SEK/year) to use FASS. I am thinking of an alternative currently.
 
 ---
 
@@ -45,7 +45,7 @@ http://localhost:3001
 
 ---
 
-> **Why auth?** This is one of the security threats I talked about in my video. Because my API
+> **PS: Why auth?** This is one of the security threats I talked about in my video. Because my API
 > gives safety information, it’s important that the interaction rules cannot be changed by
 > unauthorized users. If someone changed them, the API could give unsafe advice
 
@@ -61,7 +61,7 @@ Most medication endpoints require a **JWT token**. Flow:
    Authorization: Bearer YOUR_TOKEN_HERE
    ```
 
-Tokens expire after **1 minutes** (This is just for testing purpose for now). After that, use "Token expired, please log in again" as a signal to call login again and get a new token.
+> **Tokens expire after1 minutes** (This is just for testing purpose for now). After that, use "Token expired, please log in again" as a signal to call login again and get a new token.
 
 ---
 
@@ -73,7 +73,7 @@ Tokens expire after **1 minutes** (This is just for testing purpose for now). Af
 | POST   | `/auth/login`    | No    | Log in and get a JWT token            |
 | POST   | `/medication`    | Yes   | Create one medication                 |
 
-> **Why a limit?** To prevent abuse: allowing a very large list in one request could slow down or crash the API, so bulk create is capped at 10 medications per request.
+> **PS: Why a limit?** To prevent abuse: allowing a very large list in one request could slow down or crash the API, so bulk create is capped at 10 medications per request.
 
 | POST | `/medications` | Yes | Create up to 10 medications at once |
 | GET | `/medication/count` | No | Get total number of medications |
